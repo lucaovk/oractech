@@ -9,8 +9,8 @@ import javax.persistence.Table;
 
 import br.com.axxiom.core.db.Identifiable;
 
-@Entity(name="usuario")
-@Table(name="usuario")
+@Entity(name="usuarios")
+@Table(name="usuarios")
 public class Usuario implements Identifiable{
 	
 	/**
@@ -23,9 +23,11 @@ public class Usuario implements Identifiable{
 	@Column(name="id_usuario")
 	private Long id;
 	
-	private String matricula; 
+	private String usuario; 
 	
 	private String nome;
+	
+	private String senha;
 	
 	private String email;
 
@@ -37,12 +39,12 @@ public class Usuario implements Identifiable{
 		this.id = id;		
 	}
 
-	public String getMatricula() {
-		return matricula;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getNome() {
@@ -51,6 +53,14 @@ public class Usuario implements Identifiable{
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	public String getEmail() {
@@ -67,8 +77,9 @@ public class Usuario implements Identifiable{
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((senha == null) ? 0 : senha.hashCode());
+		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
 		return result;
 	}
 
@@ -91,17 +102,23 @@ public class Usuario implements Identifiable{
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (matricula == null) {
-			if (other.matricula != null)
-				return false;
-		} else if (!matricula.equals(other.matricula))
-			return false;
 		if (nome == null) {
 			if (other.nome != null)
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
+		if (senha == null) {
+			if (other.senha != null)
+				return false;
+		} else if (!senha.equals(other.senha))
+			return false;
+		if (usuario == null) {
+			if (other.usuario != null)
+				return false;
+		} else if (!usuario.equals(other.usuario))
+			return false;
 		return true;
 	}
 
+	
 }

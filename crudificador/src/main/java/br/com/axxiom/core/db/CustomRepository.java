@@ -9,7 +9,7 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface CustomRepository<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
 
-    void refresh(T entity);
+//    void refresh(T entity);
 
-    void evict(T entity);
+//    void evict(T entity);
 }

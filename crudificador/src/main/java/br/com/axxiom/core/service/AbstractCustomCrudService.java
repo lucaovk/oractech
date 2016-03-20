@@ -41,7 +41,7 @@ public abstract class AbstractCustomCrudService<T extends CustomIdentifiable<D>,
         }
         T savedEntity = getRepository().save(entity);
         getRepository().flush();
-        getRepository().evict(savedEntity);
+        //getRepository().evict(savedEntity);
         if (!update) {
             getLogService().logInsert(savedEntity);
         }

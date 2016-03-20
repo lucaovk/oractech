@@ -10,7 +10,6 @@
   		<groupId>br.com.oratech</groupId>
   		<artifactId>crudificador</artifactId>
   		<version>1.0.4</version>
-  		<scope>compile</scope>
   	</dependency>
   </dependencies>
 </project>

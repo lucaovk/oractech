@@ -14,15 +14,15 @@ public class CustomRepositoryImpl<T, P extends Serializable> extends SimpleJpaRe
         super(domainClass, em);
         this.em = em;
     }
-    
-    @Override
-    public void refresh(T entity) {
-        em.refresh(entity);        
-    }
-
-	@Override
-	public void evict(T entity) {
-        Session session = em.unwrap(Session.class);
-        session.evict(entity);
-	}
+    //TODO Rever amanhã
+//    @Override
+//    public void refresh(T entity) {
+//        em.refresh(entity);        
+//    }
+//
+////	@Override
+////	public void evict(T entity) {
+////        Session session = em.unwrap(Session.class);
+////        session.evict(entity);
+////	}
 }
